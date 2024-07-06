@@ -24,3 +24,6 @@ Tao CSDL tu bang du lieu va cong cu trich xuat du lieu, tu do truc quan hoa du l
 	    job_title VARCHAR(50),
 	    membership_date VARCHAR(50)
     );
+
+INSERT INTO club_member_info_cleaned
+select * from club_member_info;
