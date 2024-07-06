@@ -27,3 +27,14 @@ Tao CSDL tu bang du lieu va cong cu trich xuat du lieu, tu do truc quan hoa du l
 
 INSERT INTO club_member_info_cleaned
 select * from club_member_info;
+
+#Kiem tra du lieu co xoa di khoang trang dau cau ra dung mong muon hay khong
+select trim(UPPER(full_name)) full_name 
+from club_member_info_cleaned;
+
+#Sau khi ra dung, dung ham UPDATE de chay cau lenh
+UPDATE club_member_info_cleaned SET full_name = TRIM(UPPER(full_name))
+#De biet can cu nao fill in vao o trong trong cot Age --> Minh tao cay lenh kiem tra
+select MIN(age), MAX(age), AVG(age) from club_member_info_cleaned;
+
+#
